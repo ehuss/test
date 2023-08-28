@@ -10,7 +10,7 @@ do
     cargo new a
     cd a
     echo "$package = \"*\"" >> Cargo.toml
-    CARGO_HOME=chome cargo generate-lockfile
+    CARGO_LOG=trace CARGO_HTTP_DEBUG=true CARGO_HOME=chome cargo generate-lockfile
     cd ..
     rm -rf a
 done
