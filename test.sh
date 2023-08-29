@@ -2,6 +2,9 @@
 
 set -ex
 
+rustup install nightly
+rustup default nightly
+
 export CARGO_NET_RETRY=0
 
 for package in cargo cargo-make cargo-all-features cargo-deb backtrace deno leptos_icons poem
