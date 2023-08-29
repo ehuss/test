@@ -2,8 +2,7 @@
 
 set -ex
 
-rustup install nightly
-rustup default nightly
+cargo -Vv
 
 export CARGO_NET_RETRY=0
 
@@ -13,7 +12,10 @@ do
     cargo new a
     cd a
     echo "$package = \"*\"" >> Cargo.toml
-    CARGO_LOG=cargo::core::package=trace,cargo::util::network=trace,cargo::sources::registry=trace CARGO_HTTP_DEBUG=true CARGO_HOME=chome cargo generate-lockfile
+    CARGO_LOG=network=trace,cargo::ops::registry=trace,cargo::core::package=trace,cargo::util::network=trace,cargo::sources::registry=trace \
+        CARGO_HTTP_DEBUG=true \
+        CARGO_HOME=chome \
+        cargo generate-lockfile
     cd ..
     rm -rf a
 done
