@@ -2,9 +2,12 @@
 
 set -ex
 
+rustup install 1.71.1
+rustup default 1.71.1
 cargo -Vv
 
 export CARGO_NET_RETRY=0
+export CARGO_HTTP_MULTIPLEXING=false
 
 for package in cargo cargo-make cargo-all-features cargo-deb backtrace deno leptos_icons poem
 do
