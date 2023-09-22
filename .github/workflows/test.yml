@@ -1,0 +1,18 @@
+name: Test
+on:
+  workflow_dispatch:
+    inputs:
+      foo:
+        type: boolean
+        default: true
+
+permissions: read-all
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - env:
+          FOO: ${{ inputs.foo }}
+        run: echo $FOO
