@@ -1,0 +1,20 @@
+name: Deploy
+on:
+  release:
+    types: [created]
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Deploy Release
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@master
+    - run: env
+    - run: echo ${{ github.ref }}
