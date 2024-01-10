@@ -6,3 +6,6 @@ IFS=$'\n\t'
 csrutil status
 # Gatekeeper
 spctl --status
+
+DevToolsSecurity -status
+mdutil -avs
