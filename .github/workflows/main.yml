@@ -1,128 +1,21 @@
 name: CI
 
 on:
-  #schedule:
-  #  - cron: '2,22,42 * * * *'
-  workflow_dispatch:
+  push:
+    branches: ['*']
+  pull_request:
+    branches: ['*']
 
 jobs:
   test1:
     name: Test1
-    runs-on: ubuntu-latest
+    runs-on: macos-13
     steps:
     - uses: actions/checkout@v3
     - run: ./test.sh
   test2:
     name: Test2
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test3:
-    name: Test3
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test4:
-    name: Test4
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test5:
-    name: Test5
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test6:
-    name: Test6
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test7:
-    name: Test7
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test8:
-    name: Test8
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test9:
-    name: Test9
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test10:
-    name: Test10
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test11:
-    name: Test11
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test12:
-    name: Test12
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test13:
-    name: Test13
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test14:
-    name: Test14
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test15:
-    name: Test15
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test16:
-    name: Test16
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test17:
-    name: Test17
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test18:
-    name: Test18
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test19:
-    name: Test19
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - run: ./test.sh
-  test20:
-    name: Test20
-    runs-on: ubuntu-latest
+    runs-on: macos-12
     steps:
     - uses: actions/checkout@v3
     - run: ./test.sh
