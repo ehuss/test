@@ -1,0 +1,23 @@
+name: Test
+on:
+  push:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    name: Test
+    runs-on: windows-2022
+    steps:
+      - name: Download
+        run: |
+          curl -O https://download.sysinternals.com/files/Handle.zip
+          unzip -d handle Handle.zip
+          echo "$PWD/handle" >> $GITHUB_PATH
+      - name: Test
+        run: exit 1
+      - name: Debug
+        if: failure()
+        run: handle -accepteula
