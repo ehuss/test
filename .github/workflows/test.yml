@@ -15,5 +15,6 @@ jobs:
       # - run: ./test.sh
       - run: Set-MpPreference -DisableRealtimeMonitoring $true
         shell: powershell
+      - run: sleep 20
       - run: Get-MpComputerStatus
         shell: powershell
