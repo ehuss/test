@@ -15,9 +15,10 @@ jobs:
       # - run: ./test.sh
       - run: Set-MpPreference -DisableRealtimeMonitoring $true
         shell: powershell
-      - run: |
-          Stop-Service -Name WinDefend -Force
-          Set-Service -Name WinDefend -StartupType Disabled
+      - run: Get-Service
+        shell: powershell
+      - run: Get-Service -RequiredServices
+        shell: powershell
       - run: sleep 20
       - run: Get-MpComputerStatus
         shell: powershell
