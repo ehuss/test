@@ -19,6 +19,12 @@ jobs:
         shell: powershell
       - run: Get-Service -RequiredServices
         shell: powershell
+      - run: |
+          Stop-Service -Name WinDefend -Force
+          Set-Service -Name WinDefend -StartupType Disabled
+        shell: powershell
+      - run: Get-Service
+        shell: powershell
       - run: sleep 20
       - run: Get-MpComputerStatus
         shell: powershell
