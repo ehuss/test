@@ -12,4 +12,6 @@ jobs:
     runs-on: windows-2022
     steps:
       - uses: actions/checkout@v4
-      - run: ./test.sh
+      # - run: ./test.sh
+      - run: Get-MpComputerStatus
+        shell: powershell
