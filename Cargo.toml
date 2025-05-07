@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-jiff = { version = "0.2.3", default-features=false, features=["std", "tz-system", "tzdb-zoneinfo"] }
+jiff = { version = "0.2.3", default-features=false, features=["std", "tz-system", "tzdb-zoneinfo", "tz-fat"] }
 # alloc,default,std,tz-fat,tz-system,tzdb-bundle-platform,tzdb-concatenated,tzdb-zoneinfo
 #
 # "tzdb-bundle-platform"
