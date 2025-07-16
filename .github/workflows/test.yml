@@ -11,12 +11,5 @@ jobs:
     name: Test
     runs-on: windows-2022
     steps:
-      - uses: actions/checkout@v4
-      - run: |
-          pwd
-          ls -al
-      - name: Test
-        run: |
-          msys2Path="c:/msys64"
-          echo "${msys2Path}/usr/bin" >> "${GITHUB_PATH}"
-      - run: ./test.sh
+      - run: echo "c:/msys64/usr/bin" >> "${GITHUB_PATH}"
+      - run: git config --replace-all --global core.autocrlf false
