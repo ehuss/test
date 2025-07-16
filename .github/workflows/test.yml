@@ -12,10 +12,6 @@ jobs:
     runs-on: windows-2022
     steps:
       - uses: actions/checkout@v4
-      # - run: |
-      #     ls -al /c/msys64
-      #     ls -al /c/msys64/home
-      #     ls -al /c/msys64/home/runneradmin
       - run: |
           pwd
           ls -al
@@ -23,5 +19,4 @@ jobs:
         run: |
           msys2Path="c:/msys64"
           echo "${msys2Path}/usr/bin" >> "${GITHUB_PATH}"
-          mkdir /c/msys64/home/runneradmin
       - run: ./test.sh
