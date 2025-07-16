@@ -9,9 +9,14 @@ defaults:
 jobs:
   test:
     name: Test
-    runs-on: ubuntu-24.04-arm
+    runs-on: windows-2022
     steps:
+      - run: |
+          ls -al /c/msys64
+          ls -al /c/msys64/home
+          ls -al /c/msys64/home/runneradmin
       - name: Test
         run: |
-          cat /proc/cpuinfo || true
-          cat /proc/meminfo || true
+          msys2Path="c:/msys64"
+          echo "${msys2Path}/usr/bin" >> "${GITHUB_PATH}"
+          git config --replace-all --global core.autocrlf false
