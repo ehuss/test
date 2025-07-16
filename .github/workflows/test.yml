@@ -11,10 +11,10 @@ jobs:
     name: Test
     runs-on: windows-2022
     steps:
-      - run: |
-          ls -al /c/msys64
-          ls -al /c/msys64/home
-          ls -al /c/msys64/home/runneradmin
+      # - run: |
+      #     ls -al /c/msys64
+      #     ls -al /c/msys64/home
+      #     ls -al /c/msys64/home/runneradmin
       - name: Test
         run: |
           msys2Path="c:/msys64"
