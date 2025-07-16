@@ -23,4 +23,5 @@ jobs:
         run: |
           msys2Path="c:/msys64"
           echo "${msys2Path}/usr/bin" >> "${GITHUB_PATH}"
+          mkdir /c/msys64/home/runneradmin
       - run: ./test.sh
