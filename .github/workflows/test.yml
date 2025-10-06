@@ -9,9 +9,13 @@ defaults:
 jobs:
   test:
     name: Test
-    runs-on: ubuntu-24.04-arm
+    runs-on: windows-2025
     steps:
+      - uses: actions/checkout@v5
       - name: Test
         run: |
-          cat /proc/cpuinfo || true
-          cat /proc/meminfo || true
+          cd foo; \
+          for i in {1..400}
+          do
+            rm -rf target ; cargo test
+          done
